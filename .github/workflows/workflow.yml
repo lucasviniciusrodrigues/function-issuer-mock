@@ -6,6 +6,9 @@ on:
 jobs:
   fake-deploy-and-issue:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
 
     steps:
     - name: Checkout
@@ -17,13 +20,18 @@ jobs:
     - name: Check Application
       run: sleep 10s
 
+    - name: Generate GitHub App Token
+      id: generate_token
+      uses: tibdex/github-app-token@v1
+      with:
+        app_id: ${{ secrets.APP_ID }}
+        private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
     - name: Open Issue
       uses: actions-ecosystem/action-create-issue@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ steps.generate_token.outputs.token }} # Usar o token gerado
         title: Erro 500
         body: | 
           Este é um erro simulado gerado por um workflow de teste.
           Por favor, investigue a causa raiz do erro 500.
-        assignees: lucasviniciusrodrigues
-
