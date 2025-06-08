@@ -22,7 +22,7 @@ jobs:
     - name: Open Issue
       uses: actions-ecosystem/action-create-issue@v1
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         title: Erro 500
         body: | 
           Este é um erro simulado gerado por um workflow de teste.
