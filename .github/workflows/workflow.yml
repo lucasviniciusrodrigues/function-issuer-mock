@@ -1,4 +1,4 @@
-name: Fake Deploy and Issue Creation
+name: Deploy with Issue Creation
 
 on:
   workflow_dispatch:
