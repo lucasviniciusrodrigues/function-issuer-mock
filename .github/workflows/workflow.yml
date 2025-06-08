@@ -15,10 +15,10 @@ jobs:
       run: sleep 60s
 
     - name: Open Issue
-      uses: peter-evans/create-issue@v4
+      uses: actions-ecosystem/action-create-issue@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
         title: Erro 500
         body: | 
           Este é um erro simulado gerado por um workflow de teste.
           Por favor, investigue a causa raiz do erro 500.
+
