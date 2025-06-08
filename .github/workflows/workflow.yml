@@ -1,11 +1,8 @@
-name: Fake Deploy and Issue Creation
-
-on:
-  workflow_dispatch:
-
 jobs:
   fake-deploy-and-issue:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write # Adicione esta linha para conceder permissão de escrita de issues
 
     steps:
     - name: Fake Checkout
