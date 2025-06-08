@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Fake Checkout
+    - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Echo Deploy
+    - name: Deploy
       run: echo "Simulating deploy..."
 
-    - name: Delay for 1 minute
-      run: sleep 60s
+    - name: Check Application
+      run: sleep 10s
 
     - name: Open Issue
       uses: actions-ecosystem/action-create-issue@v1
