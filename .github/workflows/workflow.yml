@@ -1,8 +1,11 @@
+name: Fake Deploy and Issue Creation
+
+on:
+  workflow_dispatch:
+
 jobs:
   fake-deploy-and-issue:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write # Adicione esta linha para conceder permissão de escrita de issues
 
     steps:
     - name: Fake Checkout
@@ -21,4 +24,3 @@ jobs:
         body: | 
           Este é um erro simulado gerado por um workflow de teste.
           Por favor, investigue a causa raiz do erro 500.
-
