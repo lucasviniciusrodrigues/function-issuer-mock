@@ -25,4 +25,5 @@ jobs:
         body: | 
           Este é um erro simulado gerado por um workflow de teste.
           Por favor, investigue a causa raiz do erro 500.
+        assignees: lucasviniciusrodrigues
 
